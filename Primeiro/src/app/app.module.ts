@@ -3,10 +3,12 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { AlertModule } from 'ngx-bootstrap';
+import { EventBindComponentComponent } from './event-bind-component/event-bind-component.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    EventBindComponentComponent
   ],
   imports: [
     BrowserModule,
