@@ -4,6 +4,7 @@ import { Http } from '@angular/http';
 import 'rxjs/Rx';
 
 @Injectable()
+
 export class DbService {
 
   constructor(private http : Http) {}

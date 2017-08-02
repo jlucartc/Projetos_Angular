@@ -2,10 +2,12 @@ import { Component, OnInit } from '@angular/core';
 
 import { DbService } from '../../services/db.service';
 
+
 @Component({
   selector: 'app-marcas',
   templateUrl: './marcas.component.html',
-  styleUrls: ['./marcas.component.css']
+  styleUrls: ['./marcas.component.css'],
+  providers : [ DbService]
 })
 export class MarcasComponent implements OnInit {
 
