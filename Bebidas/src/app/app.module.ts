@@ -3,15 +3,17 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { ViewsModule } from './views/views.module';
+import { DbService } from './services/db.service';
+import { HttpModule } from '@angular/http';
 
 @NgModule({
   declarations: [
     AppComponent
   ],
   imports: [
-    BrowserModule,ViewsModule
+    BrowserModule,ViewsModule,HttpModule
   ],
-  providers: [],
+  providers: [DbService],
   bootstrap: [AppComponent]
 })
 
