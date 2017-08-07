@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 
-import { Http } from '@angular/http';
+import { Http, Response } from '@angular/http';
 
 import 'rxjs/Rx';
 
@@ -12,7 +12,25 @@ export class DbService {
 
   getMarcas(){
 
-    return this.http.get("http://localhost:8080").map( (r) => { return r.json() } );
+    return this.http.get("http://localhost:3000/gMarcas").map( (r : Response) => { console.log(r); return r.json() } );
+
+  }
+
+  getPedidos(){
+
+    return this.http.get("http://localhost:3000/gPedidos").map( (r) => { return r.json() } );
+
+  }
+
+  getProdutos(){
+
+    return this.http.get("http://localhost:3000/gProdutos").map( (r) => { return r.json() } );
+
+  }
+
+  getLojas(){
+
+    return this.http.get("http://localhost:3000/gLojas").map( (r) => { return r.json() } );
 
   }
 
