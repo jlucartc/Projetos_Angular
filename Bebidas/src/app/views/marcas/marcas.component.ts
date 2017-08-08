@@ -7,9 +7,8 @@ import { DbService } from '../../services/db.service';
   selector: 'app-marcas',
   templateUrl: './marcas.component.html',
   styleUrls: ['./marcas.component.css'],
-  providers : [ DbService]
 })
-export class MarcasComponent implements OnInit {
+export class MarcasComponent implements OnInit{
 
   listaMarcas : JSON;
 
