@@ -11,15 +11,18 @@ import { HomeComponent } from './views/home/home.component';
 import { MarcasComponent } from './views/marcas/marcas.component';
 import { LojaComponent } from './views/loja/loja.component';
 import { LojaProdutoComponent } from './views/loja-produto/loja-produto.component';
+import { SearchBoxComponent } from './views/search-box/search-box.component';
+import { SharedService } from './services/shared.service';
+
 
 @NgModule({
   declarations: [
-    AppComponent,BuscaComponent,HomeComponent,MarcasComponent,LojaComponent,LojaProdutoComponent
+    AppComponent,BuscaComponent,HomeComponent,MarcasComponent,LojaComponent,LojaProdutoComponent,SearchBoxComponent
   ],
   imports: [
     BrowserModule,HttpModule,routing
   ],
-  providers: [DbService],
+  providers: [DbService, SharedService],
   bootstrap: [AppComponent]
 })
 

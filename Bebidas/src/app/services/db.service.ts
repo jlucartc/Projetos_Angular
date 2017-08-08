@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 
 import { Http, Response } from '@angular/http';
 
-import 'rxjs/Rx';
+import { Observable } from 'rxjs/Rx';
 
 @Injectable()
 
@@ -67,7 +67,22 @@ export class DbService {
       Realiza busca de Lojas. Retorna lista com os
       objetos resultantes(produtos,lojas).
     */
-    return this.http.get("http://localhost:3000/search/l/"+searchString).map( (r) => { return r.json() } );
+
+    console.log("String: "+searchString);
+
+    var response : JSON = JSON.parse("{}");
+    var searchArray: String[] = searchString.split("[,-\s]");
+
+
+    var objs : Observable<JSON>;
+
+    searchArray.forEach( (i) => {
+      objs.concat(this.http.get("http://localhost:3000/search/l/"+i).map( (r) => { return r.json() } ));
+    } );
+
+    return objs;
+
+    //return this.http.get("http://localhost:3000/search/l/"+searchString).map( (r) => { return r.json() } );
   }
 
   searchProdutos(searchString: String){
@@ -75,7 +90,21 @@ export class DbService {
       Realiza busca de Produtos. Retorna lista com os
       objetos resultantes(produtos,lojas).
     */
-    return this.http.get("http://localhost:3000/search/p/"+searchString).map( (r) => { return r.json() } );
+
+    var response : JSON[] = JSON.parse("");
+    var searchArray: String[] = searchString.split("[,-\s]");
+
+    console.log(searchArray);
+
+    var objs : Observable<JSON>;
+
+    searchArray.forEach( (i) => {
+      objs.concat(this.http.get("http://localhost:3000/search/p/"+i).map( (r) => { return r.json() } ));
+    } );
+
+    return objs;
+
+    //return this.http.get("http://localhost:3000/search/p/"+searchString).map( (r) => { return r.json() } );
   }
 
 }

@@ -2,7 +2,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import { Subscription } from 'rxjs/Rx';
 
 import { DbService } from '../../services/db.service';
-import { SharedService } from '../../services/shared.service';
+i
 
 @Component({
   selector: 'app-busca',
@@ -18,7 +18,6 @@ export class BuscaComponent implements OnInit {
   private insProdutos : Subscription;
 
   constructor(private db: DbService, private shared : SharedService) {
-	this.searchString = shared.getSearchString();
   }
 
   ngOnInit() {
