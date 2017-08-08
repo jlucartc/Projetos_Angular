@@ -1,15 +1,17 @@
 import { Routes, RouterModule} from '@angular/router';
+import { ModuleWithProviders } from '@angular/core';
 
+import { BuscaComponent } from './views/busca/busca.component';
 import { HomeComponent } from './views/home/home.component';
-import { ProdutosComponent } from './views/home/home.component';
-import { PedidosComponent } from './views//pedidos.component';
-import { LojasComponent } from './views/lojas/lojas.component';
 import { MarcasComponent } from './views/marcas/marcas.component';
-import { PaginaBuscaComponent } from './views/pagina-busca/pagina-busca.component';
+import { LojaComponent } from './views/loja/loja.component';
+import { LojaProdutoComponent } from './views/loja-produto/loja-produto.component';
 
 const routes: Routes = [
 {path: '', component: HomeComponent},
-{path: '/buscar', component: PaginaBuscaComponent},
-{path: '/loja/:id', component: ProdutosComponent},
-{path: '/loja/:id/produto/:idProduto', component: PedidosComponent}
+{path: 'buscar', component: BuscaComponent},
+{path: 'loja/:id', component: LojaComponent},
+{path: 'loja/:id/produto/:idProduto', component: LojaProdutoComponent}
 ]
+
+export const routing : ModuleWithProviders = RouterModule.forRoot(routes, {enableTracing : true});

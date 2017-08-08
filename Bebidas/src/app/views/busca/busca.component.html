@@ -1,5 +1,6 @@
+<p>Pagina de Buscas</p>
 <div *ngIf="searchString">
-<table>
+<table *ngIf="resultadosLojas">
   <thead>
     <th>Lojas</th>
   </thead>
@@ -12,7 +13,7 @@
   </tr>
 </table>
 
-<table>
+<table *ngIf="resultadosProdutos">
   <thead>
     <th>Produtos</th>
   </thead>
