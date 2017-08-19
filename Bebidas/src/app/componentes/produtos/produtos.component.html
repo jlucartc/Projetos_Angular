@@ -1,3 +1,10 @@
-<p>
-  produtos works!
-</p>
+<table *ngIf="lista?.length > 0">
+  <thead>
+    <th>Nome</th>
+  </thead>
+  <tr *ngFor="let i of lista" >
+    <td><a >{{ i.nome }}</a></td>
+  </tr>
+</table>
+
+<h3 *ngIf="!lista?.length <= 0">Lista Vazia</h3>

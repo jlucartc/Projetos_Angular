@@ -8,9 +8,10 @@ import { MarcasComponent } from './componentes/marcas/marcas.component';
 import { ProdutosComponent } from './componentes/produtos/produtos.component';
 import { ProdutoDetalhesComponent } from './componentes/produto-detalhes/produto-detalhes.component';
 import { LojaDetalhesComponent } from './componentes/loja-detalhes/loja-detalhes.component';
-import { MarcaDetalhesComponent } from './componentes/marca-detalhes/marca-detalhes.component';
 import { AppComponent } from './app.component';
 import { routing } from './app.routing';
+import { DbService } from './servicos/db.service';
+
 
 @NgModule({
   declarations: [
@@ -20,13 +21,12 @@ import { routing } from './app.routing';
     MarcasComponent,
     ProdutosComponent,
     ProdutoDetalhesComponent,
-    LojaDetalhesComponent,
-    MarcaDetalhesComponent
+    LojaDetalhesComponent
   ],
   imports: [
     BrowserModule,HttpModule,routing
   ],
-  providers: [],
+  providers: [DbService],
   bootstrap: [AppComponent]
 })
 

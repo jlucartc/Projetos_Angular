@@ -1,3 +1,10 @@
-<p>
-  produto-detalhes works!
-</p>
+<table *ngIf="produto?.length > 0">
+  <thead>
+    <th>Nome</th><th>Marca</th><th>Volume</th>
+  </thead>
+  <tr *ngFor="let i of produto" >
+    <td><a >{{ i.nome }}</a></td><td>{{ i.marca }}</td><td>{{ i.volume.valor}}{{ i.volume.unidade }}</td>
+  </tr>
+</table>
+
+<h3 *ngIf="!produto?.length <= 0">Lista Vazia</h3>

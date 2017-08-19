@@ -1,3 +1,13 @@
-<p>
-  loja-detalhes works!
-</p>
+<table *ngIf="loja?.length > 0">
+  <thead>
+    <th>Nome</th><th>Rua</th><th>CEP</th>
+  </thead>
+  <tr *ngFor="let i of loja" >
+    <td><a >{{ i.nome }}</a></td><td>{{ i.end.rua }}</td><td>{{ i.end.cep }}</td>
+    <ul>
+      <li *ngFor="let j of i.produtos">{{ j.nome }} - {{ j.valor }}</li>
+    </ul>
+  </tr>
+</table>
+
+<h3 *ngIf="!loja?.length <= 0">Lista Vazia</h3>

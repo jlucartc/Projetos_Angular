@@ -7,7 +7,6 @@ import { MarcasComponent } from './componentes/marcas/marcas.component';
 import { ProdutosComponent } from './componentes/produtos/produtos.component';
 import { ProdutoDetalhesComponent } from './componentes/produto-detalhes/produto-detalhes.component';
 import { LojaDetalhesComponent } from './componentes/loja-detalhes/loja-detalhes.component';
-import { MarcaDetalhesComponent } from './componentes/marca-detalhes/marca-detalhes.component';
 import { AppComponent } from './app.component';
 
 
@@ -17,7 +16,6 @@ const routes: Routes = [
 {path: 'marcas', component: MarcasComponent},
 {path: 'produtos', component: ProdutosComponent},
 {path: 'loja/:id', component: LojaDetalhesComponent},
-{path: 'marca/:id', component: MarcaDetalhesComponent},
 {path: 'produto/:id', component: ProdutoDetalhesComponent}
 ]
 

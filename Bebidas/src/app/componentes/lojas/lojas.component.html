@@ -1,3 +1,10 @@
-<p>
-  lojas works!
-</p>
+<table *ngIf="lista?.length > 0">
+  <thead>
+    <th>Nome</th><th>Rua</th>
+  </thead>
+  <tr *ngFor="let i of lista" >
+    <td><a >{{ i.nome }}</a></td><td>{{ i.end.rua }}</td>
+  </tr>
+</table>
+
+<h3 *ngIf="!lista?.length <= 0">Lista Vazia</h3>
