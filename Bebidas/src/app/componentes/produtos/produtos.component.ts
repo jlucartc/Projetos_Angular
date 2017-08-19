@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 
+import { DbService } from '../../servicos/db.service';
+import { Subscription } from 'rxjs/Rx';
+
 @Component({
   selector: 'app-produtos',
   templateUrl: './produtos.component.html',
@@ -7,9 +10,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProdutosComponent implements OnInit {
 
-  constructor() { }
+    private sub : Subscription;
+    private lista: JSON;
 
-  ngOnInit() {
-  }
+    constructor(private db : DbService) {
+      this.sub = this.db.getProdutos().subscribe( (s) => { this.lista = s; });
+    }
+
+    ngOnInit() {
+    }
+
+    ngOnDestroy(){
+      this.sub.unsubscribe();
+    }
+
 
 }

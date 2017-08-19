@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 
+import { DbService } from '../../servicos/db.service';
+import { Subscription } from 'rxjs/Rx';
+
 @Component({
   selector: 'app-loja-detalhes',
   templateUrl: './loja-detalhes.component.html',
@@ -7,7 +10,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LojaDetalhesComponent implements OnInit {
 
-  constructor() { }
+  private lista : JSON;
+
+  constructor(private db : DbService) {
+  }
 
   ngOnInit() {
   }
