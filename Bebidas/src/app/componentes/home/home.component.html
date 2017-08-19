@@ -13,8 +13,26 @@
         <div class="">
           <p>Menu</p>
           <form class="" action="index.html" method="post">
-            <input type="text" name="" value="" autocomplete="off" placeholder="Pesquisar..."><button type="button" name="button" (onclick)="pesquisar($event)">Ir</button>
+            <input #p type="text" name="" value="" autocomplete="off" placeholder="Pesquisar..."><button type="button" name="ir" (click)="pesquisar(p.value)">Ir</button>
           </form>
+          <div class="" *ngIf="lista?">
+            <div class="" *ngIf="lista?.lojas?">
+              <label for="">Lojas</label>
+              <ul>
+                <li *ngFor="let i of lista?.lojas">
+                  <a routerLink="../loja/{{ i.id }}">{{ i.nome }}</a> - {{ i.produto.nome }} - {{ i.produto.valor }}
+                </li>
+              </ul>
+            </div><br><br>
+            <div class="" *ngIf="lista?.produtos?">
+              <label for="">Produtos</label>
+              <ul>
+                <li  *ngFor="let i of lista?.produtos?">
+                  <a routerLink="../produto/{{ i.id }}">{{ i.nome }}</a>
+                </li>
+              </ul>
+            </div>
+          </div>
         </div>
       </tr>
     </table>
