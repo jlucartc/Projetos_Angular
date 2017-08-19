@@ -2,12 +2,14 @@
   <thead>
     <th>Nome</th><th>Rua</th><th>CEP</th>
   </thead>
-  <tr *ngFor="let i of loja" >
+  <div *ngFor="let i of loja">
+  <tr *ngIf="i?._id == id" >
     <td><a >{{ i.nome }}</a></td><td>{{ i.end.rua }}</td><td>{{ i.end.cep }}</td>
     <ul>
       <li *ngFor="let j of i.produtos">{{ j.nome }} - {{ j.valor }}</li>
     </ul>
   </tr>
+</div>
 </table>
 
-<h3 *ngIf="!loja?.length <= 0">Lista Vazia</h3>
+<h3 *ngIf="!loja?.length > 0">Loja não encontrada</h3>

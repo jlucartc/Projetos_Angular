@@ -22,7 +22,7 @@ export class ProdutoDetalhesComponent implements OnInit {
     private router : Router, private db : DbService) {}
 
   ngOnInit() {
-    this.sub = this.actroute.paramMap.switchMap( (params : ParamMap) => { return this.db.getProdutoDetalhes()} ).subscribe( (produto) => { this.produto = produto });
+    this.sub = this.actroute.paramMap.switchMap( (params : ParamMap) => { return this.db.getProdutos()} ).subscribe( (produto) => { this.produto = produto });
     this.subId = this.actroute.paramMap.subscribe( (r) => { this.id = r.get('id');});
   }
 

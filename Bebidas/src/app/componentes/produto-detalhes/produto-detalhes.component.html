@@ -4,7 +4,7 @@
   </thead>
   <div *ngFor="let i of produto">
   <tr *ngIf="i._id == id">
-    <td><a >{{ i.nome }}</a></td><td>{{ i.marca }}</td><td>{{ i.volume.valor }}{{ i.volume.unidade }}</td>
+    <td><a routerLink="../produto/{{i._id}}">{{ i.nome }}</a></td><td>{{ i.marca }}</td><td>{{ i.volume.valor }}{{ i.volume.unidade }}</td>
   </tr>
   </div>
 </table>
