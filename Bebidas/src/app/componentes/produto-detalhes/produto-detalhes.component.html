@@ -2,9 +2,11 @@
   <thead>
     <th>Nome</th><th>Marca</th><th>Volume</th>
   </thead>
-  <tr *ngFor="let i of produto" >
-    <td><a >{{ i.nome }}</a></td><td>{{ i.marca }}</td><td>{{ i.volume.valor}}{{ i.volume.unidade }}</td>
+  <div *ngFor="let i of produto">
+  <tr *ngIf="i._id == id">
+    <td><a >{{ i.nome }}</a></td><td>{{ i.marca }}</td><td>{{ i.volume.valor }}{{ i.volume.unidade }}</td>
   </tr>
+  </div>
 </table>
 
-<h3 *ngIf="!produto?.length <= 0">Lista Vazia</h3>
+<h3 *ngIf="!produto?.length > 0">Produto não encontrado</h3>

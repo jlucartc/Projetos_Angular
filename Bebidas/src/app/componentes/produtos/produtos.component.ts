@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { RouterModule } from '@angular/router';
 
 import { DbService } from '../../servicos/db.service';
 import { Subscription } from 'rxjs/Rx';

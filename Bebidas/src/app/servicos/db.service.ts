@@ -23,8 +23,8 @@ export class DbService {
     return this.http.get("http://localhost:3000/lojas/j/"+id).map( (r) => { return r.json(); });
   }
 
-  getProdutoDetalhes(id : String){
-    return this.http.get("http://localhost:3000/produto/j/"+id).map( (r) => { return r.json(); });
+  getProdutoDetalhes(){
+    return this.http.get("http://localhost:3000/produtos/j").map( (r) => { return r.json(); });
   }
 
 }
