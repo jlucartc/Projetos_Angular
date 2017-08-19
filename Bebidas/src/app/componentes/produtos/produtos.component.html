@@ -3,7 +3,7 @@
     <th>Nome</th>
   </thead>
   <tr *ngFor="let i of lista" >
-    <td><a >{{ i.nome }}</a></td>
+    <td><a routerLink="produto/{{ i._id }}">{{ i.nome }}</a></td>
   </tr>
 </table>
 
