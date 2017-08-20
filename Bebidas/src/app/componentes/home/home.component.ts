@@ -15,14 +15,17 @@ export class HomeComponent implements OnInit {
   private lista : JSON;
   private sub : Subscription;
 
-  constructor(private p : PesquisarService) { }
+  constructor(private p : PesquisarService) {
+    this.lista = JSON.parse('{}');
+    console.log(this.lista);
+  }
 
   ngOnInit() {
   }
 
   pesquisar(value){
     this.pesquisa = value;
-    this.sub = this.p.pesquisar(value).subscribe( s => {this.lista = s});
+    this.sub = this.p.pesquisar(value).subscribe( s => {this.lista = s; console.log(s);});
   }
 
   ngOnDestroy(){

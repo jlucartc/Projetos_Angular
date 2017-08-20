@@ -11,6 +11,7 @@ import { LojaDetalhesComponent } from './componentes/loja-detalhes/loja-detalhes
 import { AppComponent } from './app.component';
 import { routing } from './app.routing';
 import { DbService } from './servicos/db.service';
+import { PesquisarService } from  './servicos/pesquisar.service';
 
 
 @NgModule({
@@ -26,7 +27,7 @@ import { DbService } from './servicos/db.service';
   imports: [
     BrowserModule,HttpModule,routing
   ],
-  providers: [DbService],
+  providers: [DbService, PesquisarService],
   bootstrap: [AppComponent]
 })
 
