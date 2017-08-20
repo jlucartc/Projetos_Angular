@@ -8,7 +8,7 @@ export class PesquisarService {
   constructor(private http : Http) { }
 
   pesquisar(valor){
-    return this.http.post('http://localhost:3000/pesquisar',{string : valor}).map( r => { return r.json() });
+    return this.http.post('http://localhost:3000/pesquisar',{string : valor}).map( r => { console.log(r.json()); return r.json(); });
   }
 
 }

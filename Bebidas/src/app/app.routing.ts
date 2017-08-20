@@ -19,4 +19,4 @@ const routes: Routes = [
 {path: 'produto/:id', component: ProdutoDetalhesComponent}
 ]
 
-export const routing : ModuleWithProviders = RouterModule.forRoot(routes, {enableTracing : true});
+export const routing : ModuleWithProviders = RouterModule.forRoot(routes, {enableTracing : false});

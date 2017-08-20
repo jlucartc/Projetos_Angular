@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, NgZone } from '@angular/core';
 
 
 import { PesquisarService } from '../../servicos/pesquisar.service';
@@ -12,10 +12,10 @@ import { Subscription } from 'rxjs/Rx';
 export class HomeComponent implements OnInit {
 
   private pesquisa : String;
-  private lista : JSON;
+  private lista : any;
   private sub : Subscription;
 
-  constructor(private p : PesquisarService) {
+  constructor(public zone: NgZone, private p : PesquisarService) {
     this.lista = JSON.parse('{}');
     console.log(this.lista);
   }
@@ -24,12 +24,15 @@ export class HomeComponent implements OnInit {
   }
 
   pesquisar(value){
+    if(this.sub != null){
+      this.sub.unsubscribe();
+      console.log("descinscrito");
+    }
     this.pesquisa = value;
     this.sub = this.p.pesquisar(value).subscribe( s => {this.lista = s; console.log(s);});
   }
 
   ngOnDestroy(){
-    this.sub.unsubscribe();
   }
 
 }
